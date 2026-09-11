@@ -54,7 +54,7 @@ Nguồn evidence: `detection_predictions.json` và `visuals/detection_prediction
 Nguồn evidence: `segmentation_predictions.json` và `visuals/segmentation_prediction.png`, sample `kitchen`.
 
 - Một record (`instance_id`, `class_name`, `score`, số điểm và một phần `polygon_xy`):
-    ("itchen-001","person",0.899318,348,[])
+    ("kitchen-001","person",0.899318,348,[[446.0,70.0],[445.0,71.0],...[455.0,70.0]])
 - Polygon bổ sung chi tiết gì so với box?
     bõ chỉ cho biết vùng hình chữ nhật còn Polygon cho biết đuongwf biên của vật thể
 - `instance_id` dùng để làm gì và không phải loại ID nào?
@@ -71,7 +71,7 @@ Nguồn evidence: `segmentation_predictions.json` và `visuals/segmentation_pred
 | --- | --- | --- | --- | --- |
 | Phân loại ảnh | 1class/1 ảnh | ảnh co nhiều chủ thể khác nhau | gán label theo guideline, không dựa vào score model | Kiểm tra class có đúng quy tắc và taxonomy không |
 | Phát hiện vật thể | class + bbox cho từng object | Box quá rộng/hẹp,che khuất | Vẽ box sát object và gán class | Kiểm tra class, số object, vị trí và độ chặt của box |
-| Instance segmentation | class + polygon/mask cho từng instance | biên object mờ, object tiếp xúc/che khuất, mask ăn sang background khác |  Vẽ polygon theo phần quan sát được| Kiểm tra instance, class và độ chính xác của biên mask |
+| Instance segmentation | class + polygon/mask cho từng instance | biên object mờ, object tiếp xúc/che khuất, mask ăn sang background khác |  Vẽ polygon theo phần quan sát được| Kiểm tra instance, class và độ chính xác của biên |
 
 ## 5. An toàn dữ liệu
 
